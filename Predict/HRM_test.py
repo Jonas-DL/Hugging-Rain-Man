@@ -13,7 +13,7 @@ from PIL import Image
 from model.ANFL import MEFARG
 
 
-def test_MAE_AU_evaluate(image, model, device, threshold=0.5,algo='FMAE'):
+def test_AU(image, model, device, threshold=0.5, algo='FMAE'):
     model.eval()  # switch to evaluation mode
 
     image = image.to(device)
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     model = model.to(device)
     # binary classification | 二分类
     sigmoid = Sigmoid()
-    test_MAE_AU_evaluate(image_tensor, model, device,algo=algorithm)
+    test_AU(image_tensor, model, device, algo=algorithm)
 
 
 
