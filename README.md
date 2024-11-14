@@ -42,6 +42,18 @@ perform AU testing. Any missing libraries can be found in the original repositor
 - **Pre-trained Models**: PyTorch `.pth` files.
 - **Machine-extracted Features**: `.csv` files.
 
+## AU/AD Annotation Tool 
+We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
+
+### Buttons
+- **Open data path**: Path where the annotated data (.csv) will be saved.
+- **Confirm**: Enter the subject you are currently annotating, and clicking this button will generate S-X.csv in the specified data path.
+- **Clear Checkbox**: Clear all checkboxes.
+- **Submit**: Submit the final AU/AD annotations.
+
+### LRTB Input Box
+Enter the direction of the AU. For example, if AU2 is activated on the right side, enter 2 in the R input box.
+
 ## Acknowledgment
 We would like to express our gratitude to the following excellent open-source projects: [JAA-Net](https://github.com/ZhiwenShao/PyTorch-JAANet),[EmoFAN](https://github.com/face-analysis/emonet), [EmoFAN4AU-Detection](https://github.com/jingyang2017/aunet_train), 
 [ME-GraphAU](https://github.com/CVI-SZU/ME-GraphAU), [MAE-Face](https://github.com/FuxiVirtualHuman/MAE-Face), 
