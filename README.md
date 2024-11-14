@@ -21,7 +21,7 @@ research and development in the field of children facial expression analysis, pa
 ### Overview
 - **Model**: ResNet-50, EmoFAN, ME-GraphAU, MAE-Face, FMAE
 - **Training Data**: HRM dataset
-- - **Selected AUs/ADs for detection**: AU1, AU2, AU4, AU6, AU7, AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU18, AD19, AU20, AU23, AU24, AU25, AU2X (AU26/27), AU28, AD32, and AU43E.
+- **Selected AUs/ADs for detection**: AU1, AU2, AU4, AU6, AU7, AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU18, AD19, AU20, AU23, AU24, AU25, AU2X (AU26/27), AU28, AD32, and AU43E.
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
