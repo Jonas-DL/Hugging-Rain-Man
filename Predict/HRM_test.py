@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # pretrained_weights = './exp_HRM_finetune_vit_L_12_3/Fold1-checkpoint-18.pth'
     pretrained_weights = 'results/ASD-resnet50_first_stage_fold3/bs_64_seed_0_lr_0.0001/epoch_best_model_fold3.pth'
     # "27" means "2X", include 26 and 27 | 27相当于2X标签
-    aus = [1, 2, 4, 6, 7, 9, 10, 12, 14, 15, 16, 17, 20, 23, 24, 25, 27]
+    aus = [1, 2, 4, 6, 7, 9, 10, 12, 14, 15, 16, 17, 18,19,20, 23, 24, 25, 27,28,32,43]
     mean = (0.4434122, 0.36354306, 0.35404983)
     std = (0.19467306, 0.19811313, 0.1991408)
     transform = transforms.Compose([
@@ -82,7 +82,7 @@ if __name__ == '__main__':
         # for MAE-FACE
         # model_name = 'vit_base_patch16'
         model = models_vit.__dict__[model_name](
-            num_classes=17,
+            num_classes=22,
             drop_path_rate=0.1,
             global_pool=True,
         )
@@ -92,7 +92,7 @@ if __name__ == '__main__':
         # for FAME-IAT
         model_name = 'vit_large_patch16'
         model = models_vit.__dict__[model_name](
-            num_classes=17,
+            num_classes=22,
             drop_path_rate=0.1,
             global_pool=True,
             grad_reverse=1.0,  # for grad_reverse | 梯度逆转
@@ -100,11 +100,11 @@ if __name__ == '__main__':
         checkpoint = torch.load(pretrained_weights, map_location='cpu')
         checkpoint = checkpoint['model']
     elif algorithm == 'EMOFAN':
-        model = EmoNet(n_classes=17)
+        model = EmoNet(n_classes=22)
         checkpoint = torch.load(pretrained_weights, map_location='cpu')
     elif algorithm == 'ME-Graph':
         # Here, only the implementation of stage 1 is provided. | 这里，我们仅提供了stage 1的实现
-        model = MEFARG(num_classes=17, backbone='resnet50', neighbor_num=4)
+        model = MEFARG(num_classes=22, backbone='resnet50', neighbor_num=4)
 
         checkpoint = torch.load(pretrained_weights, map_location='cpu')
         checkpoint = checkpoint['state_dict']
