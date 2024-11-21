@@ -1,3 +1,7 @@
+<div align=center>
+  <img src="./Pic/logo.png" width=26%>
+</div>
+
 # Hugging-Rain-Man
 
 ## Introduction
@@ -16,9 +20,9 @@ research and development in the field of children facial expression analysis, pa
 - **Action Units and Action Descriptors**: 22AUs + 10ADs
 - **Atypical Rating**: Annotated by 5 people
 - **Facial Expression**: It is obtained by soft voting using 3 algorithms
-## Labels, Machine-extracted Features, and Pre-trained Models
 
-### Overview
+### Labels, Machine-extracted Features, and Pre-trained Models
+
 - **Model**: ResNet-50, EmoFAN, ME-GraphAU, MAE-Face, FMAE
 - **Training Data**: HRM dataset
 - **Selected 22 AUs/ADs for detection**: AU1, AU2, AU4, AU6, AU7, AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU18, AD19, AU20, AU23, AU24, AU25, AU2X (AU26/27), AU28, AD32, and AU43E.
@@ -31,16 +35,18 @@ research and development in the field of children facial expression analysis, pa
 - **Mega Cloud (Only Pre-trained Models)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
 )
 
-### Pre-trained Models Usage
-You can access the original repositories of each project through the provided links. 
-To use the pre-trained models, you can slightly modify the "evaluation" method of each model to 
-change the output dimension to 17 or 22. Alternatively, you can use the code snippets we provide in the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) directory to 
-perform AU testing. Any missing libraries can be found in the original repositories.
-
 ### Data Format
 - **AU Labels**: CSV file with columns for frame number, AU activations, basic facial expression category and atypical rating .
 - **Pre-trained Models**: PyTorch `.pth` files.
 - **Machine-extracted Features**: `.csv` files.
+
+### Pre-trained Models Usage
+You can access the original repositories of each project through the provided links. 
+To use the pre-trained models, you can slightly modify the "evaluation" method of each model to 
+change the output dimension to 17 or 22. Alternatively, you can use the code snippets we provide in the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) directory to 
+perform single image AU testing. Any missing libraries can be found in the original repositories.
+
+
 
 ## AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.

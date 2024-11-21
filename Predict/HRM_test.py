@@ -58,7 +58,8 @@ if __name__ == '__main__':
     # pretrained_weights = './exp_HRM_finetune_vit_L_12_3/Fold1-checkpoint-18.pth'
     pretrained_weights = 'results/ASD-resnet50_first_stage_fold3/bs_64_seed_0_lr_0.0001/epoch_best_model_fold3.pth'
     # "27" means "2X", include 26 and 27 | 27相当于2X标签
-    aus = [1, 2, 4, 6, 7, 9, 10, 12, 14, 15, 16, 17, 18,19,20, 23, 24, 25, 27,28,32,43]
+    # aus = [1, 2, 4, 6, 7, 9, 10, 12, 14, 15, 16, 17, 20, 23, 24, 25, 27] # 17 aus
+    aus = [1, 2, 4, 6, 7, 9, 10, 12, 14, 15, 16, 17, 18,19,20, 23, 24, 25, 27,28,32,43] # 23 aus
     mean = (0.4434122, 0.36354306, 0.35404983)
     std = (0.19467306, 0.19811313, 0.1991408)
     transform = transforms.Compose([
