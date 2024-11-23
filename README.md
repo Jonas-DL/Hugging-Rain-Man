@@ -68,10 +68,10 @@ We would like to express our gratitude to the following excellent open-source pr
 ## Citation
 if the data or method help you in the research, please cite the following paper:
 ```
-@article{Wait for an update,
-  title={Paper Title},
-  author={Name and Co-authors},
-  journal={Journal Name},
-  year={Year}
+@article{ji2024hugging,
+  title={Hugging Rain Man: A Novel Facial Action Units Dataset for Analyzing Atypical Facial Expressions in Children with Autism Spectrum Disorder},
+  author={Yanfeng Ji, Shutong Wang, Ruyi Xu, Jingying Chen, Xinzhou Jiang, Zhengyu Deng, Yuxuan Quan, Junpeng Liu},
+  journal={arXiv preprint arXiv:2411.13797},
+  year={2024}
 }
 ```
