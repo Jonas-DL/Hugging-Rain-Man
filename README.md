@@ -1,8 +1,11 @@
-<div align=center>
-  <img src="./Pic/logo.png" width=26%>
-</div>
+## <div align="center"> Hugging Rain Man: A Novel Dataset for Analyzing Facial Action Units in Children with Autism Spectrum Disorder </div>
 
-# Hugging-Rain-Man
+<div align="center">
+<a href="https://arxiv.org/abs/2411.13797"><img src="https://img.shields.io/static/v1?label=ArXiv&message=2411.13797&color=B31B1B&logo=arxiv"></a> 
+    <div>
+        <img src="./Pic/logo.png" width=26%>
+    </div>
+</div>
 
 ## Introduction
 
@@ -29,6 +32,15 @@ research and development in the field of children facial expression analysis, pa
 - **Selected 17 AUs/ADs for detection**: AU1, AU2, AU4, AU6, AU7, AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU20, AU23, AU24, AU25 and AU2X (AU26/27).
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
+
+### AU Detection Baseline
+
+#### 22 AU
+<img src="./Pic/22au.png">
+
+
+#### 17 AU
+<img src="./Pic/17au.png">
 
 ### Download Links
 - **Baidu Cloud**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
