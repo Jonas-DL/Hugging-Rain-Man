@@ -155,10 +155,6 @@ if __name__ == '__main__':
 
     algorithm = 'MAE-FACE' # select the algorithm you want to test:FMAE, FMAE-IAT, MAE-FACE, ME-Graph, EMOFAN | 选择算法
     pretrained_weights = './ckpt/Tr23-t1-checkpoint-23.pth'
-    # pretrained_weights = '/media/jiyanfeng/纪延峰-陈靓影/Datasets/HuggingRainMan/Pretrained-Models/22AU-new/MAE-FACE/TR-1_2-checkpoint-24.pth'
-    # pretrained_weights = '/media/jiyanfeng/纪延峰-陈靓影/Datasets/HuggingRainMan/Pretrained-Models/22AU/FMAE/TR-1_3-checkpoint-29.pth'
-    # pretrained_weights = '/media/jiyanfeng/纪延峰-陈靓影/Datasets/HuggingRainMan/Pretrained-Models/22AU/FMAE-IAT/TR-1_3-checkpoint-19.pth'
-    # pretrained_weights = '/media/jiyanfeng/纪延峰-陈靓影/Datasets/HuggingRainMan/Pretrained-Models/17AU/MAE-FACE/Fold3-16-55.29.pth'
 
     batch_size = 8
     num_works = 4
