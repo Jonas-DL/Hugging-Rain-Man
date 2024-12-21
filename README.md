@@ -33,32 +33,49 @@ research and development in the field of children facial expression analysis, pa
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
+#### Pre-trained Model Download Links
+- **Baidu Cloud (17/22AU Pre-trained Models, Machine-extracted Features and Labels)**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
+- **Mega Cloud (22AU Pre-trained Models and Machine-extracted Features)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
+)
+
+#### Data Format
+- **AU Labels**: CSV file with columns for frame number, AU activations, basic facial expression category and atypical rating .
+- **Pre-trained Models**: PyTorch `.pth` files.
+- **Machine-extracted Features**: `.csv` files.
+
+#### Pre-trained Models Usage
+We provide a demo for batch AU prediction. Please refer to the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) folder.
+You are recommended to use **MAE series model weights** for predictions.
+ 
+- You can download the project from [FMAE](https://github.com/forever208/FMAE-IAT).  
+- Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
+
+#### User-friendly Integrated Demo (Windows)
+For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
+
+Download link:  
+- [Baidu Cloud](https://pan.baidu.com/s/1xX6LreuEKcyknTUSF4hbNQ) pwd: CCNU 
+- [Google Drive](https://drive.google.com/file/d/1wU22vKpG-ZY4Nw5wqCLPcD0ieNBaEXxN/view?usp=drive_link)
+
+1. **Prepare Data and Weights**  
+   1. Place the images for prediction in the `FMAE/imgs/` folder. For example 1.jpg, 2.jpg, 3.jpg, etc.  Please make sure that there is only one face in the image.
+   2. If you are not familiar with how to align faces, we recommend using OpenFace 2.2.0 for face alignment. The official download link is: https://github.com/TadasBaltrusaitis/OpenFace/releases/tag/OpenFace_2.2.0. After downloading, run OpenFaceOffline.exe, check 'Record aligned faces' under the 'Record' menu, and set the output image size to 224x224 under 'Recording settings'. Finally, select your video or image from the 'File' menu. The aligned faces will be saved in the OpenFace/processed directory (in the xxxx_aligned folder). Move the images from this folder to the `/FMAE/imgs/` directory.
+   3. Place the downloaded weight files in the `FMAE/ckpt/` folder.
+
+2. **Run the Demo**  
+   1. Double-click `run_MAEFACE.bat` to execute.  
+   2. The prediction results will be saved in the `FMAE/results/` folder.
+   3. We recommend using a GPU with at least 8GB of VRAM to speed up inference. The default parameters (batch_size=8, num_workers=4, model_weight, etc.) can be modified in HRM_test_batch.py
+
+3. **Demo User Guide**
+   1. Please refer to Guide.pptx
 ### AU Detection Baseline
 
 #### 22 AU
 <img src="./Pic/22au.png">
 
-
 #### 17 AU
 <img src="./Pic/17au.png">
-
-### Download Links
-- **Baidu Cloud**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
-- **Mega Cloud (Only Pre-trained Models)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
-)
-
-### Data Format
-- **AU Labels**: CSV file with columns for frame number, AU activations, basic facial expression category and atypical rating .
-- **Pre-trained Models**: PyTorch `.pth` files.
-- **Machine-extracted Features**: `.csv` files.
-
-### Pre-trained Models Usage
-You can access the original repositories of each project through the provided links. 
-To use the pre-trained models, you can slightly modify the "evaluation" method of each model to 
-change the output dimension to 17 or 22. Alternatively, you can use the code snippets we provide in the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) directory to 
-perform single image AU testing. Any missing libraries can be found in the original repositories.
-
-
 
 ## AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
