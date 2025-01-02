@@ -75,10 +75,13 @@ Download link:
 
 ## AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
-<img src="./Pic/labeling tool.png">
+<div align="center">
+   <img src="./Pic/labeling tool.png" width=35%>
+</div>
+
 ### Buttons
 - **Open data path**: Path where the annotated data (.csv) will be saved.
-- **Confirm**: Enter the participant you are currently annotating, and clicking this button will generate S-X.csv in the specified data path.
+- **Confirm**: Enter the participant you are currently annotating, and clicking this button will generate P-X.csv in the specified data path.
 - **Open current frame**: Open the current frame image. This function is optional. You can also directly use your preferred image viewer to open the frames to be annotated.
 - **Natural frame**: Open the Natural frame image.
 - **Play backwards X frames**: Use OpenCV to start playing from the (current_frame_num - X) frame.
