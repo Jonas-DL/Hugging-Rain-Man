@@ -33,24 +33,19 @@ research and development in the field of children facial expression analysis, pa
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
-#### Pre-trained Model Download Links
+### Pre-trained Model Download Links
 - **Baidu Cloud (17/22AU Pre-trained Models, Machine-extracted Features and Labels)**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
 - **Mega Cloud (22AU Pre-trained Models and Machine-extracted Features)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
 )
 
-#### Data Format
-- **AU Labels**: CSV file with columns for frame number, AU activations, basic facial expression category and atypical rating .
-- **Pre-trained Models**: PyTorch `.pth` files.
-- **Machine-extracted Features**: `.csv` files.
-
-#### Pre-trained Models Usage
-We provide a demo for batch AU prediction. Please refer to the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) folder.
+### Pre-trained Models Usage
+We provide a demo for single and batch AU prediction. Please refer to the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) folder.
 You are recommended to use **MAE series model weights** for predictions.
  
-- You can download the project from [FMAE](https://github.com/forever208/FMAE-IAT).  
+- Clone the entire project from the GitHub repositories of various algorithms.
 - Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
 
-#### User-friendly Integrated Demo (Windows)
+### User-friendly Integrated Demo (Windows)
 For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
 
 Download link:  
@@ -69,25 +64,35 @@ Download link:
 
 3. **Demo User Guide**
    1. Please refer to Guide.pptx
-### AU Detection Baseline
 
-#### 22 AU
+## AU Detection Baseline
+
+### 22 AU
 <img src="./Pic/22au.png">
 
-#### 17 AU
+### 17 AU
 <img src="./Pic/17au.png">
 
 ## AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
-
+<img src="./Pic/labeling tool.png">
 ### Buttons
 - **Open data path**: Path where the annotated data (.csv) will be saved.
-- **Confirm**: Enter the subject you are currently annotating, and clicking this button will generate S-X.csv in the specified data path.
+- **Confirm**: Enter the participant you are currently annotating, and clicking this button will generate S-X.csv in the specified data path.
+- **Open current frame**: Open the current frame image. This function is optional. You can also directly use your preferred image viewer to open the frames to be annotated.
+- **Natural frame**: Open the Natural frame image.
+- **Play backwards X frames**: Use OpenCV to start playing from the (current_frame_num - X) frame.
 - **Clear Checkbox**: Clear all checkboxes.
-- **Submit**: Submit the final AU/AD annotations.
+- **Submit**: Submit the final AU/AD annotations. The number in the Frame input box will automatically increase by 1.
 
-### LRTB Input Box
-Enter the direction of the AU. For example, if AU2 is activated on the right side, enter 2 in the R input box.
+### Input Box
+- **Subject**: Enter the participant name: P1, P2, etc.
+- **Frame**:  Open the input frame image, and the relative address of the image can be changed by yourself.
+   ```python
+   img_path = os.path.join(folder_path + '/origin/' + object_name, f"{current_frame}_0.jpg")
+   ```
+- **LRTB**: Enter the direction of the AU. For example, if AU2 is activated on the right side, enter 2 in the R input box.
+
 
 ## Acknowledgment
 We would like to express our gratitude to the following excellent open-source projects: [JAA-Net](https://github.com/ZhiwenShao/PyTorch-JAANet),[EmoFAN](https://github.com/face-analysis/emonet), [EmoFAN4AU-Detection](https://github.com/jingyang2017/aunet_train), 

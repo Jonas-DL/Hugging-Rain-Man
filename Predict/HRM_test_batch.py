@@ -71,6 +71,15 @@ def get_jpg_files(directory):
 
     return jpg_files
 def test_AU(image, model, device, threshold=0.5, algo='FMAE'):
+    """
+    单张图像预测
+    :param image:
+    :param model:
+    :param device:
+    :param threshold:
+    :param algo:
+    :return:
+    """
     sigmoid = Sigmoid()
     model.eval()  # switch to evaluation mode
 
@@ -100,7 +109,16 @@ def test_AU(image, model, device, threshold=0.5, algo='FMAE'):
 
 @torch.no_grad()
 def eval_batch(model, device, threshold=0.5, algo='FMAE',predict_save_path='./'):
-    # binary classification | 二分类
+    """
+    批量图像预测
+    :param model:
+    :param device:
+    :param threshold:
+    :param algo:
+    :param predict_save_path:
+    :return:
+    """
+
     print(algo)
     sigmoid = Sigmoid()
     model.eval()
@@ -121,10 +139,6 @@ def eval_batch(model, device, threshold=0.5, algo='FMAE',predict_save_path='./')
             y_pred = probs >= threshold
         else:
             raise NotImplementedError(f"{algorithm} is not implemented.")
-
-        # frame_list.append(frames)
-        # pred_list.append(y_pred)
-        # 将frames和y_pred组合为一个dataframe，和df拼接  y_pred[8,22] frames[8]
 
         pred_list = []
         # 判断AU是否激活
@@ -147,7 +161,14 @@ def eval_batch(model, device, threshold=0.5, algo='FMAE',predict_save_path='./')
 
 if __name__ == '__main__':
     """
-    基于MAE-FACE的批量图像AU预测demo
+    This script provides the inference implementation of FMAE, FMAE-IAT, MAE-FACE, ME-Graph, and EMOFAN, including single-image and batch-image AU inference (prediction) demo.
+    Please place this script in the root directory of each algorithm project and install the necessary dependent libraries. 
+    Place the model weights in the ./ckpt path, the images to be predicted in the ./imgs/ directory, and save the prediction results in ./results/predict.csv.
+    
+    该脚本提供了FMAE, FMAE-IAT, MAE-FACE, ME-Graph,和EMOFAN的推理实现，包含单张和批量图像AU推理（预测）demo。
+    请将该脚本放置在每个算法项目的根目录下，安装必要的依赖库。
+    模型权重请放置在./ckpt路径中，待预测的图像请放置在./imgs/中，预测的结果保存在./results/predict.csv中。
+    
     """
     torch.manual_seed(0)
     np.random.seed(0)
@@ -196,8 +217,6 @@ if __name__ == '__main__':
     elif algorithm == 'FMAE':
         # for FMAE
         model_name = 'vit_large_patch16'
-        # for MAE-FACE
-        # model_name = 'vit_base_patch16'
         model = models_vit.__dict__[model_name](
             num_classes=22,
             drop_path_rate=0.1,
@@ -240,5 +259,7 @@ if __name__ == '__main__':
     predict_results_csv_path = './results/predict.csv'
     eval_batch(model, device,algo=algorithm,predict_save_path=predict_results_csv_path)
 
+    # single_img = './imgs/1.jpg'
+    # test_AU(single_img, model, device, threshold=0.5, algo=algorithm)
 
 
