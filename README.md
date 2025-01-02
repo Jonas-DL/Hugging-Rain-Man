@@ -76,7 +76,7 @@ Download link:
 ## AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
 <div align="center">
-   <img src="./Pic/labeling tool.png" width=35%>
+   <img src="./Pic/labeling tool.png" width=44%>
 </div>
 
 ### Buttons
@@ -89,7 +89,7 @@ We provide an additional AU annotation tool that you need to install the PySimpl
 - **Submit**: Submit the final AU/AD annotations. The number in the Frame input box will automatically increase by 1.
 
 ### Input Box
-- **Subject**: Enter the participant name: P1, P2, etc.
+- **Participant**: Enter the participant name: P1, P2, etc.
 - **Frame**:  Open the input frame image, and the relative address of the image can be changed by yourself.
    ```python
    img_path = os.path.join(folder_path + '/origin/' + object_name, f"{current_frame}_0.jpg")
