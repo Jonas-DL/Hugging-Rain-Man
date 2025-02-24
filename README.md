@@ -33,6 +33,10 @@ research and development in the field of children facial expression analysis, pa
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
+**The publicly available data and models are exclusively for non-commercial research
+purposes, including but not limited to academic studies and scientific exploration. Any
+commercial use or use for profit-making activities is strictly prohibited.**
+
 ### Pre-trained Model Download Links
 - **Baidu Cloud (17/22AU Pre-trained Models, Machine-extracted Features and Labels)**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
 - **Mega Cloud (22AU Pre-trained Models and Machine-extracted Features)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
