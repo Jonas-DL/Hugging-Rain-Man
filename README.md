@@ -49,7 +49,7 @@ You are recommended to use **MAE series model weights** for predictions.
 - Clone the entire project from the GitHub repositories of various algorithms.
 - Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
 
-### User-friendly Integrated Demo (Windows)
+### User-friendly Integrated Demo for AU Detection (Windows)
 For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
 
 Download link:  
