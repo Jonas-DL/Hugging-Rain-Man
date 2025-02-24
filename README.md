@@ -11,8 +11,8 @@
 
 This repository contains the annotated Action Unit (AU) and Action Descriptor (AD) labels for the HRM dataset, 
 along with pre-trained models for facial action detection and atypical expression regression. The dataset consists of 131,758 frames, 
-organized into 1,535 segments. The images themselves are not publicly available temporarily due to privacy and 
-ethical considerations. However, the AU labels,  and pre-trained models are provided to facilitate 
+organized into 1,535 segments. The original images themselves are not publicly available due to privacy and 
+ethical considerations. However, the AU labels, machine-extracted features and pre-trained models are provided to facilitate 
 research and development in the field of children facial expression analysis, particularly for Autism Spectrum Disorder (ASD).
 
 ## Dataset Description
