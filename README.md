@@ -16,13 +16,20 @@ ethical considerations. However, the AU labels, machine-extracted features and p
 research and development in the field of children facial expression analysis, particularly for Autism Spectrum Disorder (ASD).
 
 ## Dataset Description
+**The publicly available data and models are exclusively for non-commercial research
+purposes, including but not limited to academic studies and scientific exploration. Any
+commercial use or use for profit-making activities is strictly prohibited.**
 
 ### Overview
+- **Participants**: ASD:66; TD:32
+- **Age Range**: 2-12 years old
 - **Total Frames**: 131,758
 - **Segments**: 1,535
 - **Action Units and Action Descriptors**: 22AUs + 10ADs
 - **Atypical Rating**: Annotated by 5 people
 - **Facial Expression**: It is obtained by soft voting using 3 algorithms
+- **Ethnicity**: Chinese
+- **Race**: East Asian
 
 ### Labels, Machine-extracted Features, and Pre-trained Models
 
@@ -33,9 +40,7 @@ research and development in the field of children facial expression analysis, pa
 - **Performance Metrics**: Accuracy, F1-Score
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
-**The publicly available data and models are exclusively for non-commercial research
-purposes, including but not limited to academic studies and scientific exploration. Any
-commercial use or use for profit-making activities is strictly prohibited.**
+
 
 ### Pre-trained Model Download Links
 - **Baidu Cloud (17/22AU Pre-trained Models, Machine-extracted Features and Labels)**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
@@ -48,6 +53,16 @@ You are recommended to use **MAE series model weights** for predictions.
  
 - Clone the entire project from the GitHub repositories of various algorithms.
 - Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
+
+Differences in facial structure and cultural variations in emotional
+expression may lead to reduced performance when the model
+is applied to non-East Asian populations. Additionally, given
+that our dataset is limited to children aged 2-12 years, the
+model’s ability to generalize to individuals outside of this
+age range may also be compromised. Researchers using this
+dataset and model should be mindful of these factors, as
+the results may not fully represent broader, more diverse
+populations.
 
 ### User-friendly Integrated Demo for AU Detection (Windows)
 For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
