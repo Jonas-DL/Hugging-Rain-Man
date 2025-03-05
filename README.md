@@ -18,7 +18,7 @@ research and development in the field of children facial expression analysis, pa
 ## Dataset Description
 **The publicly available data and models are exclusively for non-commercial research
 purposes, including but not limited to academic studies and scientific exploration. Any
-commercial use or use for profit-making activities is strictly prohibited.**
+commercial use or use for profit-making activities is strictly prohibited. This work is licensed under CC BY-NC-SA 4.0.**
 
 ### Overview
 - **Participants**: ASD:66; TD:32
@@ -60,9 +60,8 @@ is applied to non-East Asian populations. Additionally, given
 that our dataset is limited to children aged 2-12 years, the
 model’s ability to generalize to individuals outside of this
 age range may also be compromised. Researchers using this
-dataset and model should be mindful of these factors, as
-the results may not fully represent broader, more diverse
-populations.
+dataset and model should be mindful of these factors, as the model
+may not fully generalize to broader, more diverse populations.
 
 ### User-friendly Integrated Demo for AU Detection (Windows)
 For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
