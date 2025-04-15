@@ -7,6 +7,32 @@
     </div>
 </div>
 
+## Abstract
+Children with Autism Spectrum Disorder (ASD)
+often exhibit atypical facial expressions. However, the specific
+objective facial features that underlie this subjective perception
+remain unclear. In this paper, we introduce a novel dataset,
+Hugging Rain Man (HRM), which includes facial action units
+(AUs) manually annotated by FACS experts for both children
+with ASD and typically developing (TD) children. The dataset
+comprises a rich collection of posed and spontaneous facial
+expressions, totaling approximately 130,000 frames, along with
+22 AUs, 10 Action Descriptors (ADs), and atypicality ratings.
+A statistical analysis of static images from the HRM reveals
+significant differences between the ASD and TD groups across
+multiple AUs and ADs when displaying the same emotional
+expressions, confirming that participants with ASD tend to
+demonstrate more irregular and diverse expression patterns.
+Subsequently, a temporal regression method was employed to analyze atypicality of dynamic sequences, thereby bridging the gap
+between subjective perception and objective facial characteristics.
+Furthermore, baseline results for AU detection are provided for
+future research reference. This work not only contributes to
+our understanding of the unique facial expression characteristics
+associated with ASD but also provides potential tools for ASD
+early screening.
+
+**Paper Link**: https://ieeexplore.ieee.org/abstract/document/10955738
+
 ## Introduction
 
 This repository contains the annotated Action Unit (AU) and Action Descriptor (AD) labels for the HRM dataset, 
@@ -54,7 +80,7 @@ You are recommended to use **MAE series model weights** for predictions.
 - Clone the entire project from the GitHub repositories of various algorithms.
 - Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
 
-Differences in facial structure and cultural variations in emotional
+⚠️Differences in facial structure and cultural variations in emotional
 expression may lead to reduced performance when the model
 is applied to non-East Asian populations. Additionally, given
 that our dataset is limited to children aged 2-12 years, the
@@ -123,10 +149,13 @@ We would like to express our gratitude to the following excellent open-source pr
 ## Citation
 if the data or method help you in the research, please cite the following paper:
 ```
-@article{ji2024hugging,
+@article{ji2025hugging,
   title={Hugging Rain Man: A Novel Facial Action Units Dataset for Analyzing Atypical Facial Expressions in Children with Autism Spectrum Disorder},
-  author={Yanfeng Ji, Shutong Wang, Ruyi Xu, Jingying Chen, Xinzhou Jiang, Zhengyu Deng, Yuxuan Quan, Junpeng Liu},
-  journal={arXiv preprint arXiv:2411.13797},
-  year={2024}
-}
+  author={Ji, Yanfeng and Wang, Shutong and Xu, Ruyi and Chen, Jingying and Quan, Yuxuan and Jiang, Xinzhou and Deng, Zhengyu and Liu, Junpeng},
+  journal={IEEE Transactions on Affective Computing}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-17},
+  doi={10.1109/TAFFC.2025.3558914}}
 ```
