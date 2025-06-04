@@ -175,7 +175,7 @@ if __name__ == '__main__':
     cudnn.benchmark = True
 
     algorithm = 'MAE-FACE' # select the algorithm you want to test:FMAE, FMAE-IAT, MAE-FACE, ME-Graph, EMOFAN | 选择算法
-    pretrained_weights = './ckpt/Tr23-t1-checkpoint-23.pth'
+    pretrained_weights = './ckpt/TR-1_3-checkpoint-8-F1=55.84.pth'
 
     batch_size = 8
     num_works = 4
@@ -209,7 +209,7 @@ if __name__ == '__main__':
         model = models_vit.__dict__[model_name](
             num_classes=22,
             drop_path_rate=0.1,
-            global_pool=False,
+            global_pool=True, # According to the recommendations of the MAE-FACE algorithm, the new version of the weights will no longer use the cls_token for AU prediction.
         )
         checkpoint = torch.load(pretrained_weights, map_location='cpu')
         checkpoint = checkpoint['model']

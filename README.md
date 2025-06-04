@@ -5,43 +5,43 @@
     <div>
         <img src="./Pic/logo.png" width=26%>
     </div>
+
+Yanfeng Ji, Shutong Wang, Ruyi Xu, Jingying Chen, Yuxuan Quan, Xinzhou Jiang, Zhengyu Deng, Junpeng Liu
+<br>
+**Central China Normal University**
+<br>
+**Paper Link**: https://ieeexplore.ieee.org/abstract/document/10955738
 </div>
 
-## Abstract
-Children with Autism Spectrum Disorder (ASD)
-often exhibit atypical facial expressions. However, the specific
-objective facial features that underlie this subjective perception
-remain unclear. In this paper, we introduce a novel dataset,
-Hugging Rain Man (HRM), which includes facial action units
-(AUs) manually annotated by FACS experts for both children
-with ASD and typically developing (TD) children. The dataset
-comprises a rich collection of posed and spontaneous facial
-expressions, totaling approximately 130,000 frames, along with
-22 AUs, 10 Action Descriptors (ADs), and atypicality ratings.
-A statistical analysis of static images from the HRM reveals
-significant differences between the ASD and TD groups across
-multiple AUs and ADs when displaying the same emotional
-expressions, confirming that participants with ASD tend to
-demonstrate more irregular and diverse expression patterns.
-Subsequently, a temporal regression method was employed to analyze atypicality of dynamic sequences, thereby bridging the gap
-between subjective perception and objective facial characteristics.
-Furthermore, baseline results for AU detection are provided for
-future research reference. This work not only contributes to
-our understanding of the unique facial expression characteristics
-associated with ASD but also provides potential tools for ASD
-early screening.
 
-**Paper Link**: https://ieeexplore.ieee.org/abstract/document/10955738
-
-## Introduction
-
+## 💁Introduction
 This repository contains the annotated Action Unit (AU) and Action Descriptor (AD) labels for the HRM dataset, 
 along with pre-trained models for facial action detection and atypical expression regression. The dataset consists of 131,758 frames, 
 organized into 1,535 segments. The original images themselves are not publicly available due to privacy and 
 ethical considerations. However, the AU labels, machine-extracted features and pre-trained models are provided to facilitate 
 research and development in the field of children facial expression analysis, particularly for Autism Spectrum Disorder (ASD).
 
-## Dataset Description
+## 🚀Quick Start - Child AU Detection Demo (Windows)
+For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
+
+**Download link:**  
+- [Baidu Cloud](https://pan.baidu.com/s/1xX6LreuEKcyknTUSF4hbNQ) pwd: CCNU 
+- [Google Drive](https://drive.google.com/file/d/1PWcDD-ET4bS2tT1dE8oFDG1E31pIMHVl/view?usp=sharing)
+
+1. **Prepare Data and Weights**  
+   1. Place the images for prediction in the `FMAE/imgs/` folder. For example 1.jpg, 2.jpg, 3.jpg, etc.  Please make sure that there is only one face in the image.
+   2. If you are not familiar with how to align faces, we recommend using OpenFace 2.2.0 for face alignment. The official download link is: https://github.com/TadasBaltrusaitis/OpenFace/releases/tag/OpenFace_2.2.0. After downloading, run OpenFaceOffline.exe, check 'Record aligned faces' under the 'Record' menu, and set the output image size to 224x224 under 'Recording settings'. Finally, select your video or image from the 'File' menu. The aligned faces will be saved in the OpenFace/processed directory (in the xxxx_aligned folder). Move the images from this folder to the `/FMAE/imgs/` directory.
+   3. Place the downloaded weight files in the `FMAE/ckpt/` folder.
+
+2. **Run the Demo**  
+   1. Double-click `run_MAEFACE.bat` to execute.  
+   2. The prediction results will be saved in the `FMAE/results/` folder.
+   3. We recommend using a GPU with at least 8GB of VRAM to speed up inference. The default parameters (batch_size=8, num_workers=4, model_weight, etc.) can be modified in `HRM_test_batch.py`
+
+3. **Demo User Guide**
+   1. Please refer to Guide.pptx
+
+## 📢Dataset Description
 **The publicly available data and models are exclusively for non-commercial research
 purposes, including but not limited to academic studies and scientific exploration. Any
 commercial use or use for profit-making activities is strictly prohibited. This work is licensed under CC BY-NC-SA 4.0.**
@@ -67,7 +67,6 @@ commercial use or use for profit-making activities is strictly prohibited. This 
 - **Machine-extracted Features**: InsightFace and OpenFace features (5 key points, head pose and bounding box, etc)
 
 
-
 ### Pre-trained Model Download Links
 - **Baidu Cloud (17/22AU Pre-trained Models, Machine-extracted Features and Labels)**: [Download Link](https://pan.baidu.com/s/1hMCuq4L892kl092uiDjrvw), pwd:CCNU
 - **Mega Cloud (22AU Pre-trained Models and Machine-extracted Features)**: [Download Link](https://mega.nz/folder/GVYRmbKa#5vfygvAm0mYl_h-6YbFzAQ
@@ -77,8 +76,9 @@ commercial use or use for profit-making activities is strictly prohibited. This 
 We provide a demo for single and batch AU prediction. Please refer to the [Predict](https://github.com/Jonas-DL/Hugging-Rain-Man/tree/main/Predict) folder.
 You are recommended to use **MAE series model weights** for predictions.
  
-- Clone the entire project from the GitHub repositories of various algorithms.
-- Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests.
+- Clone the entire project from the GitHub repositories of various algorithms, such as ME-Graph, MAE-FACE, etc.
+- Install the required libraries, place the scripts in the project root directory, and download the corresponding weight files to run the tests (**Inference Stage**).
+- You can also use the weights we provide to fine-tune on your own annotated AU datasets. For example, you can execute `main_finetune.py` in the [FMAE](https://github.com/forever208/FMAE-IAT) repository to achieve this.
 
 ⚠️Differences in facial structure and cultural variations in emotional
 expression may lead to reduced performance when the model
@@ -88,36 +88,19 @@ model’s ability to generalize to individuals outside of this
 age range may also be compromised. Researchers using this
 dataset and model should be mindful of these factors, as the model
 may not fully generalize to broader, more diverse populations.
+ If you intend to use the model among non-East Asian populations, we recommend first annotating a small-scale AU dataset for the target population and then fine-tuning the model weights.
 
-### User-friendly Integrated Demo for AU Detection (Windows)
-For users unfamiliar with environment setup, we offer a user-friendly integrated demo for **Windows** based on the MAE series models.
 
-Download link:  
-- [Baidu Cloud](https://pan.baidu.com/s/1xX6LreuEKcyknTUSF4hbNQ) pwd: CCNU 
-- [Google Drive](https://drive.google.com/file/d/1wU22vKpG-ZY4Nw5wqCLPcD0ieNBaEXxN/view?usp=drive_link)
-
-1. **Prepare Data and Weights**  
-   1. Place the images for prediction in the `FMAE/imgs/` folder. For example 1.jpg, 2.jpg, 3.jpg, etc.  Please make sure that there is only one face in the image.
-   2. If you are not familiar with how to align faces, we recommend using OpenFace 2.2.0 for face alignment. The official download link is: https://github.com/TadasBaltrusaitis/OpenFace/releases/tag/OpenFace_2.2.0. After downloading, run OpenFaceOffline.exe, check 'Record aligned faces' under the 'Record' menu, and set the output image size to 224x224 under 'Recording settings'. Finally, select your video or image from the 'File' menu. The aligned faces will be saved in the OpenFace/processed directory (in the xxxx_aligned folder). Move the images from this folder to the `/FMAE/imgs/` directory.
-   3. Place the downloaded weight files in the `FMAE/ckpt/` folder.
-
-2. **Run the Demo**  
-   1. Double-click `run_MAEFACE.bat` to execute.  
-   2. The prediction results will be saved in the `FMAE/results/` folder.
-   3. We recommend using a GPU with at least 8GB of VRAM to speed up inference. The default parameters (batch_size=8, num_workers=4, model_weight, etc.) can be modified in HRM_test_batch.py
-
-3. **Demo User Guide**
-   1. Please refer to Guide.pptx
-
-## AU Detection Baseline
+## ✨️AU Detection Baseline
 
 ### 22 AU
 <img src="./Pic/22au.png">
+Different from the MAE-FACE training configuration reported in ours paper, we retrained MAE-FACE using a new parameter setup (shown in the "MAE-FACE-new" column of the table). The new configuration is as follows: train_epochs=20, warmup_epochs=10, blr=5e-4, min_lr=1e-6, and global_pool=True.
 
 ### 17 AU
 <img src="./Pic/17au.png">
 
-## AU/AD Annotation Tool 
+## ⚙️AU/AD Annotation Tool 
 We provide an additional AU annotation tool that you need to install the PySimpleGUI library in advance.
 <div align="center">
    <img src="./Pic/labeling tool.png" width=44%>
@@ -141,21 +124,20 @@ We provide an additional AU annotation tool that you need to install the PySimpl
 - **LRTB**: Enter the direction of the AU. For example, if AU2 is activated on the right side, enter 2 in the R input box.
 
 
-## Acknowledgment
+## 🙇Acknowledgment
 We would like to express our gratitude to the following excellent open-source projects: [JAA-Net](https://github.com/ZhiwenShao/PyTorch-JAANet),[EmoFAN](https://github.com/face-analysis/emonet), [EmoFAN4AU-Detection](https://github.com/jingyang2017/aunet_train), 
 [ME-GraphAU](https://github.com/CVI-SZU/ME-GraphAU), [MAE-Face](https://github.com/FuxiVirtualHuman/MAE-Face), 
 [FMAE](https://github.com/forever208/FMAE-IAT), [EAC](https://github.com/zyh-uaiaaaa/Erasing-Attention-Consistency), 
 [Poster++](https://github.com/talented-q/poster_v2), and [DDAMFN++](https://github.com/SainingZhang/DDAMFN).
-## Citation
-if the data or method help you in the research, please cite the following paper:
-```
+
+## 🧲Citation
+If you find our work useful for your research, please consider citing the paper :
+```bibtex
 @article{ji2025hugging,
   title={Hugging Rain Man: A Novel Facial Action Units Dataset for Analyzing Atypical Facial Expressions in Children with Autism Spectrum Disorder},
   author={Ji, Yanfeng and Wang, Shutong and Xu, Ruyi and Chen, Jingying and Quan, Yuxuan and Jiang, Xinzhou and Deng, Zhengyu and Liu, Junpeng},
   journal={IEEE Transactions on Affective Computing}, 
   year={2025},
-  volume={},
-  number={},
   pages={1-17},
   doi={10.1109/TAFFC.2025.3558914}}
 ```
