@@ -26,7 +26,7 @@ For users unfamiliar with environment setup, we offer a user-friendly integrated
 
 **Download link:**  
 - [Baidu Cloud](https://pan.baidu.com/s/1xX6LreuEKcyknTUSF4hbNQ) pwd: CCNU 
-- [Google Drive](https://drive.google.com/file/d/1PWcDD-ET4bS2tT1dE8oFDG1E31pIMHVl/view?usp=sharing)
+- [Google Drive](https://drive.google.com/file/d/1pRiH89wt0Nt6-PItU5MBrW2QWsawuh45/view?usp=sharing)
 
 1. **Prepare Data and Weights**  
    1. Place the images for prediction in the `FMAE/imgs/` folder. For example 1.jpg, 2.jpg, 3.jpg, etc.  Please make sure that there is only one face in the image.
