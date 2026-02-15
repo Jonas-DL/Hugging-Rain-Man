@@ -140,17 +140,9 @@ def eval_batch(model, device, threshold=0.5, algo='FMAE',predict_save_path='./')
         else:
             raise NotImplementedError(f"{algorithm} is not implemented.")
 
-        pred_list = []
-        # 判断AU是否激活
-        for i in range(y_pred.shape[0]): # batch
-            # print(f"Frame {frames[i]}:")
-            for au_idx in range(y_pred.shape[1]):
-                pred_list.append(y_pred[i, au_idx]) # single au predict
-                # if y_pred[i, au_idx] == 1:
-                #     print(f"AU {aus[au_idx]}: 1", end=' ')
-
-        # 与df拼接，frames为一列，pred_list中每个AU的结果各自为一列，AU的列名保存在aus变量中
-        df = pd.concat([df, pd.DataFrame({'frame': frames, **dict(zip(aus, pred_list))})], ignore_index=True)
+        new_data = pd.DataFrame(y_pred, columns=aus)
+        new_data.insert(0, 'frame', frames)
+        df = pd.concat([df, new_data], ignore_index=True) # 合并当前批次
 
     # 按照frame列的值升序排序
     df.sort_values(by='frame',ascending=True,inplace=True)
